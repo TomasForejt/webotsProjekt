@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation -0.760795370008337 0.6129817525827707 0.213175458189803 0.827977637602887
-  position 1.114087878158455 1.4619213919821277 2.257741709722161
+  orientation -0.4239130469638415 0.9003473349955291 0.09834838575330247 0.43233162656891677
+  position 0.3224436544404998 0.9707815989188556 2.0795104734628835
 }
 TexturedBackground {
 }
@@ -17,6 +17,7 @@ RectangleArena {
   floorAppearance Appearance {
     texture ImageTexture {
       url [
+        "C:/Users/lukas/OneDrive/Plocha/podlaha.jpg"
         "D:/VUT/programování/Webots/podlaha.jpg"
       ]
     }
@@ -25,10 +26,35 @@ RectangleArena {
     }
   }
 }
+WoodenBox {
+  translation 0 0.07 -0.02
+  size 0.025 0.025 0.025
+  mass 2
+}
 TinkerbotsBase {
   translation 0 0.03 0
   rotation 0 1 0 -0.523595307179586
   controller "robot_controller"
+  upSlot TinkerbotsCube {
+    frontSlot TinkerbotsPivot {
+      name "kloub1"
+      slot TinkerbotsPivot {
+        name "kloub2"
+        slot TinkerbotsPivot {
+          name "kloub3"
+          slot TinkerbotsGrabber {
+            name "ruka"
+            fingerASlot TinkerbotsFinger {
+            }
+            fingerBSlot TinkerbotsFinger {
+            }
+            fingerCSlot TinkerbotsFinger {
+            }
+          }
+        }
+      }
+    }
+  }
   downSlot TinkerbotsCube {
   }
   leftSlot TinkerbotsCube {
