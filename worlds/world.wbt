@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation -0.8148225980548883 0.5588059419368316 0.1542726578340194 0.6112511338038015
-  position 1.1665139100492472 1.57152530666591 2.3254178222643125
+  orientation -0.0032364038715434295 -0.9436890188449527 -0.3308180185561708 3.141537360686766
+  position -0.1437475564270296 1.4330928005167378 -1.451958217819753
 }
 TexturedBackground {
 }
@@ -19,6 +19,43 @@ RectangleArena {
     }
     textureTransform TextureTransform {
       scale 0.5 0.5
+    }
+  }
+}
+TinkerbotsBase {
+  translation 0 0.02 0
+  downSlot TinkerbotsCube {
+  }
+  leftSlot TinkerbotsCube {
+    leftSlot TinkerbotsMotor {
+      rotation 0 0 1 1.5707996938995747
+      frontSlot TinkerbotsAxle {
+        endSlot TinkerbotsWheel {
+        }
+      }
+    }
+    rightSlot TinkerbotsMotor {
+      rotation 0 0 1 -1.5707996938995747
+      frontSlot TinkerbotsAxle {
+        endSlot TinkerbotsWheel {
+        }
+      }
+    }
+  }
+  rightSlot TinkerbotsCube {
+    leftSlot TinkerbotsMotor {
+      rotation 0 0 1 1.5707996938995747
+      frontSlot TinkerbotsAxle {
+        endSlot TinkerbotsWheel {
+        }
+      }
+    }
+    rightSlot TinkerbotsMotor {
+      rotation 0 0 1 -1.5707996938995747
+      frontSlot TinkerbotsAxle {
+        endSlot TinkerbotsWheel {
+        }
+      }
     }
   }
 }
