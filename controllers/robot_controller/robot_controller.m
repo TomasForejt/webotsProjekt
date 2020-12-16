@@ -16,6 +16,12 @@ motorLZ = wb_robot_get_device('motorLZ');
 motorPP = wb_robot_get_device('motorPP');
 motorPZ = wb_robot_get_device('motorPZ');
 
+irP = wb_robot_get_device('irP');
+irL = wb_robot_get_device('irL');
+
+wb_distance_sensor_enable(irP,TIME_STEP);
+wb_distance_sensor_enable(irL,TIME_STEP);
+
 wb_motor_set_position(motorLP,inf);
 wb_motor_set_position(motorLZ,inf);
 wb_motor_set_position(motorPP,inf);
@@ -25,6 +31,7 @@ wb_motor_set_velocity(motorLP, -1);
 wb_motor_set_velocity(motorLZ, -1);
 wb_motor_set_velocity(motorPP, 1);
 wb_motor_set_velocity(motorPZ, 1);
+
 
 
 
@@ -39,6 +46,33 @@ wb_motor_set_velocity(motorPZ, 1);
 % and leave the loop when Webots signals the termination
 %
 while wb_robot_step(TIME_STEP) ~= -1
+irP_value = wb_distance_sensor_get_value(irP)
+irL_value = wb_distance_sensor_get_value(irL);
+
+if irL_value > 500
+
+wb_motor_set_velocity(motorLP, -1);
+wb_motor_set_velocity(motorLZ, -1);
+wb_motor_set_velocity(motorPP, 2);
+wb_motor_set_velocity(motorPZ, 2);
+
+elseif irP_value > 500
+
+wb_motor_set_velocity(motorLP, -2);
+wb_motor_set_velocity(motorLZ, -2);
+wb_motor_set_velocity(motorPP, 1);
+wb_motor_set_velocity(motorPZ, 1);
+
+
+else
+
+wb_motor_set_velocity(motorLP, -1);
+wb_motor_set_velocity(motorLZ, -1);
+wb_motor_set_velocity(motorPP, 1);
+wb_motor_set_velocity(motorPZ, 1);
+
+end
+
 
   % read the sensors, e.g.:
   %  rgb = wb_camera_get_image(camera);
