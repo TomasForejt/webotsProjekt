@@ -1,0 +1,24 @@
+#VRML_SIM R2020b utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation -0.8148225980548883 0.5588059419368316 0.1542726578340194 0.6112511338038015
+  position 1.1665139100492472 1.57152530666591 2.3254178222643125
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorAppearance Appearance {
+    texture ImageTexture {
+      url [
+        "D:/VUT/programování/Webots/podlaha.jpg"
+      ]
+    }
+    textureTransform TextureTransform {
+      scale 0.5 0.5
+    }
+  }
+}
