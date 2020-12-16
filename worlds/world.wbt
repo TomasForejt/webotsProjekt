@@ -3,14 +3,17 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation -0.0032364038715434295 -0.9436890188449527 -0.3308180185561708 3.141537360686766
-  position -0.1437475564270296 1.4330928005167378 -1.451958217819753
+  orientation -0.21312992773491338 0.9180728721701642 0.33424218059505284 2.064027641484499
+  position 0.9953682786316005 0.8041869267934051 -0.5935233021907966
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
 }
 RectangleArena {
+  translation -0.93 0 0
+  floorSize 4 4
+  floorTileSize 2 2
   floorAppearance Appearance {
     texture ImageTexture {
       url [
@@ -24,11 +27,14 @@ RectangleArena {
 }
 TinkerbotsBase {
   translation 0 0.02 0
+  rotation 0 1 0 -0.523595307179586
+  controller "robot_controller"
   downSlot TinkerbotsCube {
   }
   leftSlot TinkerbotsCube {
     leftSlot TinkerbotsMotor {
       rotation 0 0 1 1.5707996938995747
+      name "motorLZ"
       frontSlot TinkerbotsAxle {
         endSlot TinkerbotsWheel {
         }
@@ -36,6 +42,7 @@ TinkerbotsBase {
     }
     rightSlot TinkerbotsMotor {
       rotation 0 0 1 -1.5707996938995747
+      name "motorLP"
       frontSlot TinkerbotsAxle {
         endSlot TinkerbotsWheel {
         }
@@ -45,6 +52,7 @@ TinkerbotsBase {
   rightSlot TinkerbotsCube {
     leftSlot TinkerbotsMotor {
       rotation 0 0 1 1.5707996938995747
+      name "motorPP"
       frontSlot TinkerbotsAxle {
         endSlot TinkerbotsWheel {
         }
@@ -52,6 +60,7 @@ TinkerbotsBase {
     }
     rightSlot TinkerbotsMotor {
       rotation 0 0 1 -1.5707996938995747
+      name "motorPZ"
       frontSlot TinkerbotsAxle {
         endSlot TinkerbotsWheel {
         }
