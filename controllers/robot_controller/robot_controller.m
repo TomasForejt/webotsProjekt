@@ -32,10 +32,10 @@ wb_motor_set_position(motorLZ, inf);
 wb_motor_set_position(motorPP, inf);
 wb_motor_set_position(motorPZ, inf);
 
-wb_motor_set_velocity(motorLP, -1);
-wb_motor_set_velocity(motorLZ, -1);
-wb_motor_set_velocity(motorPP, 1);
-wb_motor_set_velocity(motorPZ, 1);
+wb_motor_set_velocity(motorLP, -2);
+wb_motor_set_velocity(motorLZ, -2);
+wb_motor_set_velocity(motorPP, 2);
+wb_motor_set_velocity(motorPZ, 2);
 
 
 
@@ -57,23 +57,23 @@ if irL_value > 500
 
 wb_motor_set_velocity(motorLP, 0);
 wb_motor_set_velocity(motorLZ, 0);
-wb_motor_set_velocity(motorPP, 2);
-wb_motor_set_velocity(motorPZ, 2);
+wb_motor_set_velocity(motorPP, 3);
+wb_motor_set_velocity(motorPZ, 3);
 
 elseif irP_value > 500
 
-wb_motor_set_velocity(motorLP, -2);
-wb_motor_set_velocity(motorLZ, -2);
+wb_motor_set_velocity(motorLP, -3);
+wb_motor_set_velocity(motorLZ, -3);
 wb_motor_set_velocity(motorPP, 0);
 wb_motor_set_velocity(motorPZ, 0);
 
 
 else
 
-wb_motor_set_velocity(motorLP, -1);
-wb_motor_set_velocity(motorLZ, -1);
-wb_motor_set_velocity(motorPP, 1);
-wb_motor_set_velocity(motorPZ, 1);
+wb_motor_set_velocity(motorLP, -2);
+wb_motor_set_velocity(motorLZ, -2);
+wb_motor_set_velocity(motorPP, 2);
+wb_motor_set_velocity(motorPZ, 2);
 
 end
 
