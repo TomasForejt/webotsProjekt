@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation -0.9773085652434768 -0.032893208760746674 -0.20925105762972654 0.5717429228361043
-  position -0.13609327479585073 1.2192461893949091 3.4205552066979736
+  orientation -0.8558143083538067 -0.41888538350856336 -0.3035076689307526 0.817719041588569
+  position -0.5787641521086031 1.6280593504101015 2.953732081154791
 }
 TexturedBackground {
 }
@@ -30,14 +30,17 @@ RectangleArena {
 }
 TinkerbotsBase {
   translation 0.24 0.04 1.25
-  name "Tinkerbots(1)"
+  name "gate"
+  controller "gate_controller"
   upSlot TinkerbotsMotor {
     rotation 0 0 1 1.5707996938995747
+    name "motor1"
     upSlot TinkerbotsCube {
       upSlot TinkerbotsCube {
         upSlot TinkerbotsCube {
           upSlot TinkerbotsCube {
             upSlot TinkerbotsMotor {
+              name "motor2"
               upSlot TinkerbotsCube {
               }
               frontSlot TinkerbotsAxle {
@@ -51,6 +54,7 @@ TinkerbotsBase {
             }
           }
           leftSlot TinkerbotsDistanceSensor {
+            name "dist"
           }
         }
       }
@@ -91,6 +95,7 @@ Panel {
 TinkerbotsBase {
   translation -0.25159 0.03 1.39789
   rotation 0 1 0 1.5708
+  name "robot"
   controller "robot_controller"
   upSlot TinkerbotsCube {
     frontSlot TinkerbotsDistanceSensor {
