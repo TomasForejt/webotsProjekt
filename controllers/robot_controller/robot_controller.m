@@ -77,7 +77,7 @@ wb_motor_set_velocity(motorPZ, 2);
 
 end
 
-if dst_value < 60
+if dst_value < 80
 
 wb_motor_set_velocity(motorLP, 0);
 wb_motor_set_velocity(motorLZ, 0);

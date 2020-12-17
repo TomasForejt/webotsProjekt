@@ -15,18 +15,15 @@ TIME_STEP = 64;
 motor1 = wb_robot_get_device('motor1');
 motor2 = wb_robot_get_device('motor2');
 
-
 wb_motor_set_position(motor1,inf);
- wb_motor_set_position(motor2,inf);
-
-    wb_motor_set_velocity(motor1, 0);
-  wb_motor_set_velocity(motor2, 0);
+wb_motor_set_position(motor2,inf);
+wb_motor_set_velocity(motor1, 0);
+wb_motor_set_velocity(motor2, 0);
   
 dist = wb_robot_get_device('dist');
 wb_distance_sensor_enable(dist, TIME_STEP);
 dist2 = wb_robot_get_device('dist2');
 wb_distance_sensor_enable(dist2, TIME_STEP);
-
 
 % get and enable devices, e.g.:
 %  camera = wb_robot_get_device('camera');
@@ -42,31 +39,22 @@ while wb_robot_step(TIME_STEP) ~= -1
 dist_value = wb_distance_sensor_get_value(dist);
 dist2_value = wb_distance_sensor_get_value(dist2);
 
-if dist_value < 70
- 
- if dist2_value > 120
-   wb_motor_set_velocity(motor1, -1);
-  wb_motor_set_velocity(motor2, -1);
-   
-  dist2_value = wb_distance_sensor_get_value(dist2);
- end
-  
-  
- 
+if dist_value < 90
 
+  wb_motor_set_velocity(motor1, -3);
+  wb_motor_set_velocity(motor2, -3);
+  
+elseif dist2_value > 120
 
-  else
+  wb_motor_set_velocity(motor1, -3);
+  wb_motor_set_velocity(motor2, -3);
+  
+else
+
   wb_motor_set_velocity(motor1, 0);
   wb_motor_set_velocity(motor2, 0);
-  
- 
-  
-  
-  
+
 end
-
-
-
 
   % read the sensors, e.g.:
   %  rgb = wb_camera_get_image(camera);

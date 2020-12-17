@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation -0.2827642922288597 -0.9107410938253749 -0.3009900580718103 1.2579536402084233
-  position -0.8304233263447791 0.5955130764346543 1.7670349455398304
+  orientation -0.2695122989510034 -0.9118899031085558 -0.30954793703530586 1.361372496779964
+  position -5.1432209511530385 3.2777041503973243 1.0108958263421077
 }
 TexturedBackground {
 }
@@ -17,6 +17,7 @@ RectangleArena {
   floorAppearance Appearance {
     texture ImageTexture {
       url [
+        "C:/Users/lukas/OneDrive/Plocha/podlaha5.jpg"
         "D:/VUT/programování/Webots/podlaha5.jpg"
       ]
     }
@@ -29,7 +30,7 @@ RectangleArena {
   }
 }
 TinkerbotsBase {
-  translation 0.32 0.03 1.25
+  translation 0.32 0.03 1.27
   name "gate"
   controller "gate_controller"
   upSlot TinkerbotsMotor {
@@ -107,7 +108,7 @@ Panel {
   size 0.5 0.3 0.04
 }
 TinkerbotsBase {
-  translation -0.25159 0.03 1.39789
+  translation -2.52159 0.03 -1.51211
   rotation 0 1 0 1.5708
   name "robot"
   controller "robot_controller"
