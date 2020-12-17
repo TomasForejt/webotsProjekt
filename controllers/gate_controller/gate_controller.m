@@ -17,8 +17,8 @@ motor2 = wb_robot_get_device('motor2');
 wb_motor_set_position(motor1, inf);
 wb_motor_set_position(motor2, inf);
 
-
-
+dist = wb_robot_get_device('dist');
+wb_distance_sensor_enable(dist, TIME_STEP);
 
 % get and enable devices, e.g.:
 %  camera = wb_robot_get_device('camera');
@@ -31,9 +31,21 @@ wb_motor_set_position(motor2, inf);
 %
 while wb_robot_step(TIME_STEP) ~= -1
 
+dist_value = wb_distance_sensor_get_value(dist);
 
-wb_motor_set_velocity(motor1, -1);
-wb_motor_set_velocity(motor2, -1);
+if dist_value < 60
+  if x < 10000
+  
+  wb_motor_set_velocity(motor1, -1);
+  wb_motor_set_velocity(motor2, -1);
+  
+  end
+  
+end
+
+x = x + 1
+
+
 
   % read the sensors, e.g.:
   %  rgb = wb_camera_get_image(camera);
@@ -45,7 +57,6 @@ wb_motor_set_velocity(motor2, -1);
 
   % if your code plots some graphics, it needs to flushed like this:
   drawnow;
-
 end
 
 % cleanup code goes here: write data to files, etc.

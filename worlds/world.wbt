@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation -0.8558143083538067 -0.41888538350856336 -0.3035076689307526 0.817719041588569
-  position -0.5787641521086031 1.6280593504101015 2.953732081154791
+  orientation -0.21620751660882487 -0.9298278551463847 -0.29778258773091243 1.5116330791828045
+  position -2.640628406782309 1.5117873262105013 1.0453022407660255
 }
 TexturedBackground {
 }
@@ -17,6 +17,7 @@ RectangleArena {
   floorAppearance Appearance {
     texture ImageTexture {
       url [
+        "C:/Users/lukas/OneDrive/Plocha/podlaha5.jpg"
         "D:/VUT/programování/Webots/podlaha5.jpg"
       ]
     }
@@ -29,7 +30,7 @@ RectangleArena {
   }
 }
 TinkerbotsBase {
-  translation 0.24 0.04 1.25
+  translation 0.32 0.03 1.25
   name "gate"
   controller "gate_controller"
   upSlot TinkerbotsMotor {
@@ -42,6 +43,10 @@ TinkerbotsBase {
             upSlot TinkerbotsMotor {
               name "motor2"
               upSlot TinkerbotsCube {
+                leftSlot TinkerbotsCube {
+                }
+              }
+              leftSlot TinkerbotsCube {
               }
               frontSlot TinkerbotsAxle {
                 endSlot TinkerbotsWheel {
@@ -52,10 +57,18 @@ TinkerbotsBase {
                 }
               }
             }
+            leftSlot TinkerbotsCube {
+            }
           }
           leftSlot TinkerbotsDistanceSensor {
             name "dist"
           }
+        }
+      }
+      leftSlot TinkerbotsCube {
+        leftSlot TinkerbotsCube {
+        }
+        rightSlot TinkerbotsCube {
         }
       }
     }
@@ -162,4 +175,10 @@ TinkerbotsBase {
       type "infra-red"
     }
   ]
+}
+Panel {
+  translation 0.350005 0.1 1.24
+  rotation 0 1 0 -1.5707953071795862
+  name "panel(4)"
+  size 0.34 0.23 0.05
 }
