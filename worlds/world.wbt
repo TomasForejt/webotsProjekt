@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation -0.4102940097842499 -0.8699801253704569 -0.2734838331521006 1.3294996681756275
-  position -4.108177585360137 3.8094330499591265 1.3123660323846842
+  orientation -0.9773085652434768 -0.032893208760746674 -0.20925105762972654 0.5717429228361043
+  position -0.13609327479585073 1.2192461893949091 3.4205552066979736
 }
 TexturedBackground {
 }
@@ -17,12 +17,51 @@ RectangleArena {
   floorAppearance Appearance {
     texture ImageTexture {
       url [
-        "C:/Users/lukas/OneDrive/Plocha/podlaha5.jpg"
-        "D:/VUT/programování/Webots/podlaha.jpg"
+        "D:/VUT/programování/Webots/podlaha5.jpg"
       ]
     }
     textureTransform TextureTransform {
       scale 0.5 0.5
+    }
+  }
+  wallAppearance BrushedAluminium {
+    colorOverride 1 0.1 0.1
+  }
+}
+TinkerbotsBase {
+  translation 0.24 0.04 1.25
+  name "Tinkerbots(1)"
+  upSlot TinkerbotsMotor {
+    rotation 0 0 1 1.5707996938995747
+    upSlot TinkerbotsCube {
+      upSlot TinkerbotsCube {
+        upSlot TinkerbotsCube {
+          upSlot TinkerbotsCube {
+            upSlot TinkerbotsMotor {
+              upSlot TinkerbotsCube {
+              }
+              frontSlot TinkerbotsAxle {
+                endSlot TinkerbotsWheel {
+                }
+              }
+              backSlot TinkerbotsAxle {
+                endSlot TinkerbotsWheel {
+                }
+              }
+            }
+          }
+          leftSlot TinkerbotsDistanceSensor {
+          }
+        }
+      }
+    }
+    frontSlot TinkerbotsAxle {
+      endSlot TinkerbotsWheel {
+      }
+    }
+    backSlot TinkerbotsAxle {
+      endSlot TinkerbotsWheel {
+      }
     }
   }
 }
@@ -50,34 +89,20 @@ Panel {
   size 0.5 0.3 0.04
 }
 TinkerbotsBase {
-  hidden translation_6 0 1.4250365162662423e-10 0
-  translation 0 0.03 0
-  rotation 0 1 0 -0.523595307179586
+  translation -0.25159 0.03 1.39789
+  rotation 0 1 0 1.5708
   controller "robot_controller"
   upSlot TinkerbotsCube {
-    frontSlot TinkerbotsPivot {
-      name "kloub1"
-      slot TinkerbotsPivot {
-        name "kloub2"
-        slot TinkerbotsPivot {
-          name "kloub3"
-          slot TinkerbotsGrabber {
-            name "ruka"
-            fingerASlot TinkerbotsFinger {
-            }
-            fingerBSlot TinkerbotsFinger {
-            }
-            fingerCSlot TinkerbotsFinger {
-            }
-          }
-        }
-      }
+    frontSlot TinkerbotsDistanceSensor {
+      rotation 0 0 1 3.141592653589793
+      name "dst"
     }
   }
   downSlot TinkerbotsCube {
   }
   leftSlot TinkerbotsCube {
     leftSlot TinkerbotsMotor {
+      translation 0 1.4250365162662423e-10 0
       rotation 0 0 1 1.5707996938995747
       name "motorLZ"
       frontSlot TinkerbotsAxle {
